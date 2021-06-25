@@ -7,6 +7,11 @@ const dayInput = document.querySelector('input[name="DD"]');
 const yearInput = document.querySelector('input[name="YYYY"]');
 let month, day, year;
 
+// FOR TESTING ONLY - REMOVE AND UNCOMMENT FUNCTION BELOW
+const ageGate = document.querySelector('#age-gate');
+ageGate.style.display = 'none';
+////////////////////////////////////////////////////
+
 // Check if user checked 'remember me'
 if (window.localStorage.length > 0) {
   monthInput.value = window.localStorage.month;
@@ -148,10 +153,10 @@ function rememberUserAge() {
 /**
  * Removes entire age gate so user can enter main site
  */
-function enterSite() {
-  const ageGate = document.querySelector('#age-gate');
-  ageGate.style.display = 'none';
-}
+// function enterSite() {
+//   const ageGate = document.querySelector('#age-gate');
+//   ageGate.style.display = 'none';
+// }
 
 // Event listeners
 monthInput.addEventListener('keyup', validateMonthInRealTime);

@@ -1,0 +1,157 @@
+/************************
+       Landing Page 
+*************************/
+
+#homepage {
+  color: var(--purpleDark);
+}
+
+/* Top menu bar */
+
+.hero-cta {
+  display: none;
+}
+
+/* Mobile Navigation */
+
+/* Desktop Navigation */
+
+.desktop-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.desktop-nav h1 {
+  color: var(--purple);
+}
+.desktop-nav--ul {
+  display: none;
+}
+.desktop-nav--ul li {
+  margin-left: 3rem;
+}
+
+/* Hero content */
+
+.hero-content {
+  height: 450px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+.hero-content--description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  background: var(--purpleBackgroundLight);
+  height: 450px;
+}
+.hero-content--description p {
+  font-weight: 200;
+}
+.hero-content--description button {
+  padding: 0.5rem;
+  margin: 1rem 0;
+  color: var(--purpleDark);
+  background-color: var(--yellow);
+  border: 2px solid var(--yellow);
+  transition: 0.2s;
+}
+.hero-content--description button:hover {
+  background-color: var(--purpleBackgroundLight);
+  transform: scale(1.02);
+  color: var(--yellow);
+  cursor: pointer;
+}
+.hero-content--description button:active {
+  background-color: var(--purpleBackgroundLight);
+  transform: scale(1.01);
+  color: var(--yellow);
+  cursor: pointer;
+}
+.hero-content--photo {
+  background: url('../images/age-gate-background3.jpg') no-repeat center center
+    fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 450px;
+}
+
+/************************
+            Logo 
+  *************************/
+
+.logo-landing {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: var(--purpleDark);
+  padding: 0rem 1rem 1rem 1rem;
+}
+.logo-landing span {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.logo-landing span:nth-child(2) {
+  font-size: 0.8rem;
+  letter-spacing: 0.5rem;
+  font-weight: 100;
+  text-align: right;
+  text-transform: uppercase;
+}
+.logo-landing--icon {
+  position: absolute;
+  top: 25px;
+  left: 28px;
+  width: 35px;
+  height: 35px;
+  fill: var(--purpleDark);
+}
+
+/* SVG icon styles */
+.social-icon--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social-icon {
+  width: 20px;
+  margin-left: 2rem;
+  fill: white;
+}
+.scroll-down-icon {
+  width: 50px;
+  display: block;
+  margin: 1.5rem auto;
+  fill: var(--purpleDark);
+}
+
+/************************
+        Media Queries 
+  *************************/
+
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+  }
+  .desktop-nav--ul {
+    display: flex;
+    list-style: none;
+  }
+  .hero-cta {
+    background-color: var(--purple);
+    color: white;
+    font-weight: 200;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+  }
+}
