@@ -1,10 +1,18 @@
 // Global bindings
-const inputs = document.querySelectorAll('input[type="text"]');
 const form = document.querySelector('.validation-form');
+const inputs = document.querySelectorAll('input[type="text"]');
+const checkbox = document.querySelector('input[type="checkbox"]');
 const monthInput = document.querySelector('input[name="MM"]');
 const dayInput = document.querySelector('input[name="DD"]');
 const yearInput = document.querySelector('input[name="YYYY"]');
 let month, day, year;
+
+// Check if user checked 'remember me'
+if (window.localStorage.length > 0) {
+  monthInput.value = window.localStorage.month;
+  dayInput.value = window.localStorage.day;
+  yearInput.value = window.localStorage.year;
+}
 
 /**
  * Prevent letters from being entered in input fields
@@ -121,10 +129,20 @@ function displayValidationTip(tip) {
   validationInstruction.textContent = tip;
 }
 
-// Local storage
+/**
+ * If checkbox is checked, set local storage fields to data entered
+ * If not, set local storage to an empty string
+ */
 function rememberUserAge() {
-  const checkbox = document.querySelector('input[type="checkbox"]');
-  console.log(checkbox);
+  if (checkbox.checked) {
+    localStorage.setItem('month', monthInput.value);
+    localStorage.setItem('day', dayInput.value);
+    localStorage.setItem('year', yearInput.value);
+  } else {
+    localStorage.removeItem('month');
+    localStorage.removeItem('day');
+    localStorage.removeItem('year');
+  }
 }
 
 /**
@@ -140,6 +158,7 @@ monthInput.addEventListener('keyup', validateMonthInRealTime);
 dayInput.addEventListener('keyup', validateDayInRealTime);
 yearInput.addEventListener('keyup', validateYearInRealTime);
 form.addEventListener('submit', determineAgeOnSubmit);
+checkbox.addEventListener('click', rememberUserAge);
 inputs.forEach((input) => {
   input.addEventListener('input', replaceLettersWithNumbers);
 });
