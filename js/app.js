@@ -1,16 +1,27 @@
 // Global bindings
+const homepage = document.querySelector('#homepage');
 const form = document.querySelector('.validation-form');
 const inputs = document.querySelectorAll('input[type="text"]');
 const checkbox = document.querySelector('input[type="checkbox"]');
 const monthInput = document.querySelector('input[name="MM"]');
 const dayInput = document.querySelector('input[name="DD"]');
 const yearInput = document.querySelector('input[name="YYYY"]');
+const expandStory = document.querySelector('.expand-story-icon');
+const heroContent = document.querySelector('.hero-content');
+const expandPhoto = document.querySelector('.expand-photo-icon');
+const heroContentDescH2 = document.querySelector('.hero-content--desc h2');
+const heroContentDescP = document.querySelector('.hero-content--desc p');
+const heroContentDescBtn = document.querySelector('.hero-content--desc button');
 let month, day, year;
 
-// FOR TESTING ONLY - REMOVE AND UNCOMMENT FUNCTION BELOW
-const ageGate = document.querySelector('#age-gate');
-ageGate.style.display = 'none';
-////////////////////////////////////////////////////
+/*********************************************************** 
+ FOR TESTING ONLY - REMOVE AND UNCOMMENT FUNCTION BELOW
+ const ageGate = document.querySelector('#age-gate');
+ ageGate.style.display = 'none';
+************************************************************/
+
+// Hide landing page if user isn't authenticated
+homepage.style.display = 'none';
 
 // Check if user checked 'remember me'
 if (window.localStorage.length > 0) {
@@ -81,7 +92,6 @@ function calculateAge(dob) {
  * @returns true or false
  */
 function determineAgeOnSubmit(e) {
-  // users birthday data
   const monthValue = +monthInput.value;
   const dayValue = +dayInput.value;
   const yearValue = +yearInput.value;
@@ -135,6 +145,7 @@ function displayValidationTip(tip) {
 }
 
 /**
+ * Local Storage
  * If checkbox is checked, set local storage fields to data entered
  * If not, set local storage to an empty string
  */
@@ -153,10 +164,43 @@ function rememberUserAge() {
 /**
  * Removes entire age gate so user can enter main site
  */
-// function enterSite() {
-//   const ageGate = document.querySelector('#age-gate');
-//   ageGate.style.display = 'none';
-// }
+function enterSite() {
+  const ageGate = document.querySelector('#age-gate');
+  ageGate.style.display = 'none';
+  homepage.style.display = 'block';
+}
+
+/**
+ * Hero column toggle functions
+ */
+function expandStorySection() {
+  heroContent.style.gridTemplateColumns = '3fr 1fr';
+  setTimeout(() => {
+    heroContentDescH2.style.display = 'block';
+    heroContentDescP.style.display = 'block';
+    heroContentDescBtn.style.display = 'block';
+  }, 200);
+}
+function expandPhotoSection() {
+  heroContent.style.gridTemplateColumns = '1fr 3fr';
+  if (window.innerWidth < 768) {
+    heroContentDescH2.style.display = 'none';
+    heroContentDescP.style.display = 'none';
+    heroContentDescBtn.style.display = 'none';
+  }
+}
+function toggleTextOnWindowResize() {
+  if (window.innerWidth < 768) {
+    heroContent.style.gridTemplateColumns = '1fr 3fr';
+    heroContentDescH2.style.display = 'none';
+    heroContentDescP.style.display = 'none';
+    heroContentDescBtn.style.display = 'none';
+  } else {
+    heroContentDescH2.style.display = 'block';
+    heroContentDescP.style.display = 'block';
+    heroContentDescBtn.style.display = 'block';
+  }
+}
 
 // Event listeners
 monthInput.addEventListener('keyup', validateMonthInRealTime);
@@ -164,6 +208,9 @@ dayInput.addEventListener('keyup', validateDayInRealTime);
 yearInput.addEventListener('keyup', validateYearInRealTime);
 form.addEventListener('submit', determineAgeOnSubmit);
 checkbox.addEventListener('click', rememberUserAge);
+expandStory.addEventListener('click', expandStorySection);
+expandPhoto.addEventListener('click', expandPhotoSection);
+window.addEventListener('resize', toggleTextOnWindowResize);
 inputs.forEach((input) => {
   input.addEventListener('input', replaceLettersWithNumbers);
 });

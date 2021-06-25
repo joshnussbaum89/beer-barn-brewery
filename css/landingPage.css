@@ -37,9 +37,11 @@
 .hero-content {
   height: 450px;
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 1fr 3fr;
+  transition: 0.2s;
 }
-.hero-content--description {
+.hero-content--desc {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,10 +50,15 @@
   background: var(--purpleBackgroundLight);
   height: 450px;
 }
-.hero-content--description p {
+.hero-content--desc p,
+.hero-content--desc h2,
+.hero-content--desc button {
+  display: none;
+}
+.hero-content--desc p {
   font-weight: 200;
 }
-.hero-content--description button {
+.hero-content--desc button {
   padding: 0.5rem;
   margin: 1rem 0;
   color: var(--purpleDark);
@@ -59,19 +66,20 @@
   border: 2px solid var(--yellow);
   transition: 0.2s;
 }
-.hero-content--description button:hover {
+.hero-content--desc button:hover {
   background-color: var(--purpleBackgroundLight);
   transform: scale(1.02);
   color: var(--yellow);
   cursor: pointer;
 }
-.hero-content--description button:active {
+.hero-content--desc button:active {
   background-color: var(--purpleBackgroundLight);
   transform: scale(1.01);
   color: var(--yellow);
   cursor: pointer;
 }
 .hero-content--photo {
+  position: relative;
   background: url('../images/age-gate-background3.jpg') no-repeat center center
     fixed;
   -webkit-background-size: cover;
@@ -79,6 +87,25 @@
   -o-background-size: cover;
   background-size: cover;
   height: 450px;
+}
+
+/* Expand column icons */
+
+.expand-story-icon {
+  position: absolute;
+  fill: var(--purpleDark);
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  cursor: pointer;
+}
+.expand-photo-icon {
+  position: absolute;
+  fill: white;
+  top: 15px;
+  left: 15px;
+  width: 30px;
+  cursor: pointer;
 }
 
 /************************
@@ -153,5 +180,10 @@
     justify-content: space-around;
     align-items: center;
     height: 40px;
+  }
+  .hero-content--desc p,
+  .hero-content--desc h2,
+  .hero-content--desc button {
+    display: block;
   }
 }
