@@ -1,0 +1,34 @@
+Take home challenge: “Age Gate”
+
+Thanks for your interest in joining the Wyng team! As a way to help us get to know you and your code a little better, we would like to have you build an “age gate.”
+
+An “age gate” is a quick, but not fool-proof, way to confirm that a user is of age before they can see the content of a website. An example of an “age gate” for a local brewery’s website might include a prompt for a user to enter in their date of birth. If they are under 21, they are shown an error message; If they are over 21, they are shown the brewery’s website homepage.
+Please build a webpage with the below criteria:
+
+● Include some text elements that give context to this webpage
+○ Example: “Welcome to XYZ! Before entering, tell us your age...”
+
+● Include an age gate element that checks if a user is at least 21 years old
+○ Consider what happens on success and what happens on fail
+○ Consider if users are visiting the site on their 21st birthday
+
+● Include a “remember me” element that allows an “of age” user to bypass the age gate on
+subsequent visits
+
+● The webpage should be functioning in the latest versions of these browsers: Chrome,
+Safari, Firefox, Edge
+
+● The webpage should be functioning and not look “broken” at any browser breakpoint
+
+● We ask that no styling framework (like Bootstrap, Skeleton, etc.) be used. Please hand-roll
+all CSS code
+○ You can either take styling direction from a particular client brand or make up your
+own designs. We want to see your CSS skills!
+
+● Code should be sent back to Wyng as a zipped folder containing: HTML, CSS, JavaScript,
+and if applicable, image files.
+○ At the time of review, we will download the .zip and open the index.html file in a
+web browser
+
+We ask that you submit your code within four days of when you receive this task. If this is not possible, due to scheduling conflicts - please let us know and we can discuss a new deadline!
+Good luck and if you have any questions regarding this challenge, please do not hesitate to reach out!

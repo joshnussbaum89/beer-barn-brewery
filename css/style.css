@@ -1,0 +1,181 @@
+/************************
+        Main Styles 
+*************************/
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* CSS variables */
+:root {
+  /* Colors */
+  --purple: rgba(52, 33, 146);
+  --purpleDark: rgb(19, 12, 54);
+  --purpleBackgroundLight: rgba(52, 33, 146, 0.2);
+  --purpleBackgroundDark: rgba(52, 33, 146, 0.95);
+  --yellow: rgb(255, 247, 28);
+  /* Font Sizes */
+}
+
+/************************
+        Base Styles 
+*************************/
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+/************************
+  Age gate - full screen 
+*************************/
+
+#age-gate {
+  position: relative;
+  height: 100vh;
+  background: url('../images/age-gate-background.jpg') no-repeat center center
+    fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.age-gate--overlay {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 600px;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: var(--purpleBackgroundLight);
+}
+.age-gate--prompt {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--purpleBackgroundDark);
+  color: white;
+  padding: 2rem;
+  height: 60%;
+  width: 80vw;
+  max-width: 500px;
+  border-radius: 1rem;
+  box-shadow: 0 0 50px var(--purpleDark);
+}
+.age-gate--prompt h2 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 2rem 0;
+}
+
+/************************
+          Logo 
+*************************/
+
+.logo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: var(--yellow);
+  padding: 0rem 1rem 1rem 1rem;
+}
+.logo span {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.logo span:nth-child(2) {
+  font-size: 0.8rem;
+  letter-spacing: 0.5rem;
+  font-weight: 100;
+  text-align: right;
+  text-transform: uppercase;
+}
+.logo-icon {
+  position: absolute;
+  top: 25px;
+  left: 28px;
+  width: 35px;
+  height: 35px;
+  fill: var(--yellow);
+}
+
+/************************
+     Validation Form 
+*************************/
+
+.validation-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.validation-form--inputs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.validation-form--inputs input[type='text'] {
+  background: var(--purpleBackgroundLight);
+  border: 1px solid white;
+  color: white;
+  padding: 0.75rem;
+  width: 20%;
+}
+.validation-form--inputs input[type='text']:focus {
+  background: var(--purpleDark);
+}
+/* small text */
+.validation-form--instruction {
+  font-size: 1.2rem;
+  font-weight: 100;
+  margin: 0rem auto 2rem;
+}
+.age-gate--prompt .validation-form--legal {
+  font-size: 0.8rem;
+  font-weight: 100;
+  margin: 0;
+}
+/* "Enter" button */
+.validation-form input[type='submit'] {
+  padding: 0.5rem;
+  margin: 1rem 0;
+  background-color: var(--yellow);
+  border: 2px solid var(--yellow);
+  transition: 0.2s;
+}
+.validation-form input[type='submit']:hover {
+  background-color: var(--purple);
+  transform: scale(1.01);
+  color: var(--yellow);
+  cursor: pointer;
+}
+.validation-form input[type='submit']:active {
+  background-color: var(--purple);
+  transform: scale(0.99);
+}
+
+/************************
+      Media Queries 
+*************************/
+
+@media (min-width: 768px) {
+  .age-gate--prompt {
+    padding: 2rem 4rem;
+  }
+  .age-gate--prompt h2 {
+    font-size: 2rem;
+  }
+}
