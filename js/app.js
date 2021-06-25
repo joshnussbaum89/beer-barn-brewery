@@ -35,14 +35,16 @@ function validateMonthInRealTime() {
     ? changeInputBorderColor(monthInput, 'green')
     : changeInputBorderColor(monthInput, 'red');
 }
+
 function validateDayInRealTime() {
   dayInput.value.length === 2 && dayInput.value >= 1 && dayInput.value <= 31
     ? changeInputBorderColor(dayInput, 'green')
     : changeInputBorderColor(dayInput, 'red');
 }
+
 function validateYearInRealTime() {
   yearInput.value.length === 4 &&
-  yearInput.value >= 1800 &&
+  yearInput.value >= 1880 &&
   yearInput.value < new Date().getFullYear()
     ? changeInputBorderColor(yearInput, 'green')
     : changeInputBorderColor(yearInput, 'red');
@@ -62,9 +64,10 @@ function calculateAge(dob) {
 
 /**
  * When user submits, evaluate whether or not they are able to enter site
- * @returns true or false whether or not user is over 21
+ * If user is 21+ and there is no weird data entry, enter site
+ * @returns true or false
  */
-function determineAgeOnSubmit() {
+function determineAgeOnSubmit(e) {
   // users birthday data
   const monthValue = +monthInput.value;
   const dayValue = +dayInput.value;
@@ -72,36 +75,37 @@ function determineAgeOnSubmit() {
   const userAge = calculateAge(new Date(yearValue, monthValue, dayValue));
   let userIsOver21;
 
-  if (userAge >= 21) {
-    userIsOver21 = true;
-  } else {
+  if (userEnteredBadInfo()) {
+    e.preventDefault();
     userIsOver21 = false;
+    displayValidationTip("Something doesn't look right...");
+  } else if (userAge < 21) {
+    e.preventDefault();
+    userIsOver21 = false;
+    displayValidationTip('Sorry, you must be at least 21 to enter 🍼');
+  } else if (userAge >= 21) {
+    e.preventDefault();
+    userIsOver21 = true;
+    enterSite();
   }
 
   return userIsOver21;
 }
 
 /**
- * Catches all errors before submitting
- * @param {*} e
+ * Catches all weird data entries
+ * @returns true or false
  */
-function catchErrors(e) {
+function userEnteredBadInfo() {
   if (
-    monthInput.value < 1 ||
-    monthInput.value > 12 ||
-    dayInput.value < 1 ||
-    monthInput.value > 31 ||
-    yearInput.value < 1 ||
+    +monthInput.value < 1 ||
+    +monthInput.value > 12 ||
+    +dayInput.value < 1 ||
+    +dayInput.value > 31 ||
     +yearInput.value > new Date().getFullYear() ||
-    +yearInput.value < 1890
+    +yearInput.value < 1880
   ) {
-    e.preventDefault();
-    displayValidationTip("Something doesn't look right...");
-  }
-
-  if (!determineAgeOnSubmit()) {
-    e.preventDefault();
-    displayValidationTip('Sorry, you must be at least 21 to enter 🍼');
+    return true;
   }
 }
 
@@ -117,11 +121,25 @@ function displayValidationTip(tip) {
   validationInstruction.textContent = tip;
 }
 
+// Local storage
+function rememberUserAge() {
+  const checkbox = document.querySelector('input[type="checkbox"]');
+  console.log(checkbox);
+}
+
+/**
+ * Removes entire age gate so user can enter main site
+ */
+function enterSite() {
+  const ageGate = document.querySelector('#age-gate');
+  ageGate.style.display = 'none';
+}
+
 // Event listeners
 monthInput.addEventListener('keyup', validateMonthInRealTime);
 dayInput.addEventListener('keyup', validateDayInRealTime);
 yearInput.addEventListener('keyup', validateYearInRealTime);
-form.addEventListener('submit', catchErrors);
+form.addEventListener('submit', determineAgeOnSubmit);
 inputs.forEach((input) => {
   input.addEventListener('input', replaceLettersWithNumbers);
 });
