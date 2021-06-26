@@ -5,6 +5,23 @@ const expandPhoto = document.querySelector('.expand-photo-icon');
 const heroContentDescH2 = document.querySelector('.hero-content--desc h2');
 const heroContentDescP = document.querySelector('.hero-content--desc p');
 const heroContentDescBtn = document.querySelector('.hero-content--desc button');
+const closeIcon = document.querySelector('.close-icon');
+const hamburgerIcon = document.querySelector('.hamburger-icon');
+const mobileOverlay = document.querySelector('.mobile-overlay');
+const navigation = document.querySelector('.navigation');
+
+/**
+ * Mobile navigation toggle functions
+ */
+function closeNavigation() {
+  mobileOverlay.style.display = 'none';
+}
+function openNavigation() {
+  mobileOverlay.style.display = 'block';
+}
+function closeNavigationOnScroll() {
+  if (window.scrollY > 0) mobileOverlay.style.display = 'none';
+}
 
 /**
  * Add/remove expand icons
@@ -80,5 +97,8 @@ function displayBeers() {
 // Event listeners
 window.addEventListener('load', displayBeers);
 window.addEventListener('resize', toggleTextOnWindowResize);
+window.addEventListener('scroll', closeNavigationOnScroll);
 expandStory.addEventListener('click', expandStorySection);
 expandPhoto.addEventListener('click', expandPhotoSection);
+closeIcon.addEventListener('click', closeNavigation);
+hamburgerIcon.addEventListener('click', openNavigation);

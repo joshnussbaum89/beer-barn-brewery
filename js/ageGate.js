@@ -8,13 +8,7 @@ const dayInput = document.querySelector('input[name="DD"]');
 const yearInput = document.querySelector('input[name="YYYY"]');
 let month, day, year;
 
-/*********************************************************** 
- FOR TESTING ONLY - REMOVE AND UNCOMMENT FUNCTION BELOW
- const ageGate = document.querySelector('#age-gate');
- ageGate.style.display = 'none';
-************************************************************/
-
-// Hide landing page if user isn't authenticated
+// Hide landing page initially
 homepage.style.display = 'none';
 
 // Check if user checked 'remember me'

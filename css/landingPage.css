@@ -17,7 +17,63 @@
   opacity: 0.8;
 }
 
-/* Mobile Navigation */
+/************************
+    Mobile Navigation 
+*************************/
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Overlay */
+.mobile-overlay {
+  display: none;
+  background: var(--purple);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  left: 0;
+  top: 0;
+}
+.mobile--ul {
+  position: relative;
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  top: 25%;
+  width: 100%;
+}
+.mobile--ul li {
+  margin: 3rem 0;
+}
+.mobile--ul a {
+  color: white;
+  font-size: 2rem;
+  transition: 0.2s;
+}
+.mobile--ul a:hover {
+  color: var(--yellow);
+  font-size: 2rem;
+}
+/* icons */
+.hamburger-icon {
+  fill: var(--purpleDark);
+  margin: 1rem;
+  width: 30px;
+  cursor: pointer;
+}
+.close-icon {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  fill: white;
+  width: 1.75rem;
+  cursor: pointer;
+}
 
 /************************
     Desktop Navigation 
@@ -27,7 +83,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
 }
 .desktop-nav h1 {
   color: var(--purple);
@@ -126,7 +181,7 @@
 }
 
 /************************
-          Logo 
+        Brand Logo 
 *************************/
 
 .logo-landing {
@@ -156,7 +211,7 @@
   fill: var(--purpleDark);
 }
 
-/* SVG icon styles */
+/* Social and scroll icons */
 .social-icon--container {
   display: flex;
   justify-content: center;
@@ -256,15 +311,12 @@
 }
 .contact-form input[type='submit']:hover {
   background-color: var(--purple);
-  transform: scale(1.01);
   color: var(--yellow);
   cursor: pointer;
 }
 .contact-form input[type='submit']:active {
   background-color: var(--purple);
-  transform: scale(0.99);
 }
-
 #policies {
   text-align: center;
   font-weight: 100;
@@ -278,16 +330,17 @@
 .policy-terms a:hover {
   opacity: 0.8;
 }
+
 /************************
         Media Queries 
 *************************/
 
 @media (min-width: 768px) {
-  .desktop-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 3rem;
+  .navigation {
+    padding: 1rem 2rem;
+  }
+  .mobile-nav {
+    display: none;
   }
   .desktop-nav--ul {
     display: flex;

@@ -133,13 +133,11 @@
 }
 .validation-form input[type='submit']:hover {
   background-color: var(--purple);
-  transform: scale(1.01);
   color: var(--yellow);
   cursor: pointer;
 }
 .validation-form input[type='submit']:active {
   background-color: var(--purple);
-  transform: scale(0.99);
 }
 
 /************************

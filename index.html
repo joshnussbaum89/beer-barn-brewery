@@ -136,13 +136,13 @@
           </div>
         </div>
 
-        <!-- Desktop Nav -->
-        <nav class="desktop-nav">
+        <!-- Mobile and desktop nav -->
+        <nav class="navigation">
+          <!-- Brand logo -->
           <a href="#">
             <div class="logo-landing">
               <span>The Beer Barn</span>
               <span>brewery</span>
-              <!-- Hops icon -->
               <svg
                 viewBox="0 0 512.001 512.001"
                 xmlns="http://www.w3.org/2000/svg"
@@ -160,11 +160,45 @@
               </svg>
             </div>
           </a>
+
+          <!-- Desktop Nav -->
+          <div class="desktop-nav"></div>
           <ul class="desktop-nav--ul">
             <li><a href="#about">About</a></li>
             <li><a href="#beverages">Beverages</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
+
+          <!-- Mobile Nav -->
+          <div class="mobile-nav">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384.97 384.97"
+              class="hamburger-icon"
+            >
+              <path
+                d="M12.03 120.303h360.909c6.641 0 12.03-5.39 12.03-12.03 0-6.641-5.39-12.03-12.03-12.03H12.03c-6.641 0-12.03 5.39-12.03 12.03s5.39 12.03 12.03 12.03zM372.939 180.455H12.03c-6.641 0-12.03 5.39-12.03 12.03s5.39 12.03 12.03 12.03h360.909c6.641 0 12.03-5.39 12.03-12.03s-5.389-12.03-12.03-12.03zM372.939 264.667H132.333c-6.641 0-12.03 5.39-12.03 12.03 0 6.641 5.39 12.03 12.03 12.03h240.606c6.641 0 12.03-5.39 12.03-12.03.001-6.641-5.389-12.03-12.03-12.03z"
+              />
+            </svg>
+          </div>
+
+          <!-- Overlay -->
+          <div class="mobile-overlay">
+            <ul class="mobile--ul">
+              <li><a href="#about">About</a></li>
+              <li><a href="#beverages">Beverages</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 241.171 241.171"
+              class="close-icon"
+            >
+              <path
+                d="M138.138 120.754l99.118-98.576a11.931 11.931 0 000-17.011c-4.74-4.704-12.439-4.704-17.179 0l-99.033 98.492-99.949-99.96c-4.74-4.752-12.439-4.752-17.179 0-4.74 4.764-4.74 12.475 0 17.227l99.876 99.888L3.555 220.497c-4.74 4.704-4.74 12.319 0 17.011 4.74 4.704 12.439 4.704 17.179 0l100.152-99.599 99.551 99.563c4.74 4.752 12.439 4.752 17.179 0 4.74-4.764 4.74-12.475 0-17.227l-99.478-99.491z"
+              />
+            </svg>
+          </div>
         </nav>
 
         <!-- Hero -->
