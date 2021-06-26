@@ -22,6 +22,10 @@
         Base Styles 
 *************************/
 
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -38,10 +42,9 @@ h4 {
 }
 
 a {
-  color: white;
   text-decoration: none;
   transition: 0.2s;
 }
-a:hover {
+/* a:hover {
   opacity: 0.8;
-}
+} */

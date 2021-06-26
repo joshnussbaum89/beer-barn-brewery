@@ -1,7 +1,7 @@
 // Global bindings
 const homepage = document.querySelector('#homepage');
 const form = document.querySelector('.validation-form');
-const inputs = document.querySelectorAll('input[type="text"]');
+const inputs = document.querySelectorAll('.validation-input');
 const checkbox = document.querySelector('input[type="checkbox"]');
 const monthInput = document.querySelector('input[name="MM"]');
 const dayInput = document.querySelector('input[name="DD"]');
