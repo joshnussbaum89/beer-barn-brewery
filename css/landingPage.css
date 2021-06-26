@@ -69,33 +69,30 @@
 .hero-content--desc h2,
 .hero-content--desc button {
   display: none;
+  margin: 1rem 0;
 }
 .hero-content--desc p {
   font-weight: 200;
 }
 .hero-content--desc button {
-  padding: 0.5rem;
-  margin: 1rem 0;
   color: var(--purpleDark);
   background-color: var(--yellow);
+  padding: 0.5rem;
   border: 2px solid var(--yellow);
+  cursor: pointer;
   transition: 0.2s;
 }
 .hero-content--desc button:hover {
   background-color: var(--purpleBackgroundLight);
-  transform: scale(1.02);
-  cursor: pointer;
 }
 .hero-content--desc button:active {
   background-color: var(--purpleBackgroundLight);
-  transform: scale(1.01);
   color: var(--yellow);
-  cursor: pointer;
 }
-.hero-content--desc a {
+.hero-content--desc button {
   color: var(--purpleDark);
 }
-.hero-content--desc a:hover {
+.hero-content--desc button:hover {
   color: var(--yellow);
 }
 .hero-content--photo {
@@ -175,7 +172,11 @@
   display: block;
   width: 50px;
   margin: 1.5rem auto;
+  transition: 0.2s;
   cursor: pointer;
+}
+.scroll-down-icon:hover {
+  fill: var(--purple);
 }
 
 /************************
@@ -210,7 +211,7 @@
 *************************/
 
 #contact {
-  height: 500px;
+  height: 100vh;
   background: var(--purple);
 }
 .contact-form {
@@ -264,6 +265,19 @@
   transform: scale(0.99);
 }
 
+#policies {
+  text-align: center;
+  font-weight: 100;
+  margin-top: 4rem;
+  color: white;
+  padding: 0 1rem;
+}
+.policy-terms a {
+  color: white;
+}
+.policy-terms a:hover {
+  opacity: 0.8;
+}
 /************************
         Media Queries 
 *************************/
@@ -301,5 +315,14 @@
 @media (min-width: 1024px) {
   .beer-container {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-height: 590px) {
+  #contact {
+    height: initial;
+  }
+  #policies {
+    display: none;
   }
 }
