@@ -47,7 +47,7 @@
 
 /************************
             Logo 
-  *************************/
+*************************/
 
 .logo {
   position: relative;
@@ -78,7 +78,7 @@
 
 /************************
        Validation Form 
-  *************************/
+*************************/
 
 .validation-form {
   width: 100%;
@@ -109,8 +109,7 @@
   background: var(--purpleDark);
 }
 
-/* small text */
-
+/* Small text */
 .validation-form--instruction {
   font-size: 1.2rem;
   font-weight: 200;
@@ -123,7 +122,6 @@
 }
 
 /* "Enter" button */
-
 .validation-form input[type='submit'] {
   padding: 0.5rem;
   margin: 1rem 0;
@@ -143,8 +141,8 @@
 }
 
 /************************
-        Media Queries 
-  *************************/
+      Media Queries 
+*************************/
 
 @media (min-width: 768px) {
   .age-gate--prompt {
@@ -156,7 +154,6 @@
 }
 
 /* landscape orientiation mobile screens */
-
 @media (max-height: 525px) {
   .age-gate--prompt {
     padding: 2rem 4rem;

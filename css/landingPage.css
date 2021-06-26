@@ -7,14 +7,15 @@
 }
 
 /* Top menu bar */
-
 .hero-cta {
   display: none;
 }
 
 /* Mobile Navigation */
 
-/* Desktop Navigation */
+/************************
+    Desktop Navigation 
+*************************/
 
 .desktop-nav {
   display: flex;
@@ -32,7 +33,9 @@
   margin-left: 3rem;
 }
 
-/* Hero content */
+/************************
+          Hero 
+*************************/
 
 .hero-content {
   height: 450px;
@@ -90,7 +93,6 @@
 }
 
 /* Expand column icons */
-
 .expand-story-icon {
   position: absolute;
   fill: var(--purpleDark);
@@ -109,8 +111,8 @@
 }
 
 /************************
-            Logo 
-  *************************/
+          Logo 
+*************************/
 
 .logo-landing {
   position: relative;
@@ -159,7 +161,7 @@
 
 /************************
         Media Queries 
-  *************************/
+*************************/
 
 @media (min-width: 768px) {
   .desktop-nav {
