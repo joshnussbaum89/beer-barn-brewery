@@ -6,7 +6,7 @@
   position: relative;
   height: 100vh;
   background: url('../images/age-gate-background.jpg') no-repeat center center
-    fixed;
+    fixed var(--purpleBackgroundLight);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -31,13 +31,13 @@
   justify-content: space-around;
   align-items: center;
   background-color: var(--purpleBackgroundDark);
+  box-shadow: 0 0 50px var(--purpleDark);
   color: white;
   padding: 2rem;
   height: 60%;
   width: 80vw;
   max-width: 500px;
   border-radius: 1rem;
-  box-shadow: 0 0 50px var(--purpleDark);
 }
 .age-gate--prompt h2 {
   font-weight: 600;

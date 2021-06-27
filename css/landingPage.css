@@ -170,10 +170,9 @@
   color: var(--yellow);
 }
 .hero-content--photo {
-  /* TODO: Add background color when photo is loading */
   position: relative;
-  background: url('../images/age-gate-background3.jpg') no-repeat center center
-    fixed;
+  background: url('../images/age-gate-background3.jpg') no-repeat center fixed
+    var(--purple);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -276,6 +275,7 @@
   height: 100%;
 }
 .beer-img {
+  background-color: var(--purpleBackgroundLight);
   width: 100%;
   max-width: 250px;
   height: 100%;
