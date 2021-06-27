@@ -30,9 +30,9 @@
 
 /* Overlay */
 .mobile-overlay {
-  display: none;
-  background: var(--purple);
   position: fixed;
+  background: var(--purple);
+  display: none;
   height: 100%;
   width: 100%;
   z-index: 100;
@@ -73,10 +73,10 @@
 }
 .close-icon {
   position: absolute;
-  top: 2rem;
-  right: 2rem;
   fill: white;
   width: 1.6rem;
+  top: 2rem;
+  right: 2rem;
   cursor: pointer;
 }
 .mobile-icon--container {
@@ -86,8 +86,8 @@
 }
 .mobile-icon {
   fill: white;
-  width: 30px;
   margin: 0 2rem;
+  width: 30px;
   transition: 0.2s;
   cursor: pointer;
 }
@@ -125,9 +125,9 @@
 *************************/
 
 .hero-content {
-  height: 450px;
   display: grid;
   grid-template-columns: 1fr 3fr;
+  height: 450px;
   transition: 0.2s;
 }
 .hero-content--desc {
@@ -136,12 +136,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 2rem;
   background: var(--purpleBackgroundLight);
+  padding: 0 2rem;
   height: 450px;
 }
 .hero-content--desc p,
-/* .hero-content--desc h2, */
 .hero-content--desc button {
   display: none;
   margin: 1rem 0;
@@ -152,10 +151,10 @@
 .hero-content--desc button {
   color: var(--purpleDark);
   background-color: var(--yellow);
-  padding: 0.5rem;
   border: 2px solid var(--yellow);
-  cursor: pointer;
+  padding: 0.5rem;
   transition: 0.2s;
+  cursor: pointer;
 }
 .hero-content--desc button:hover {
   background-color: var(--purpleBackgroundLight);
@@ -171,7 +170,7 @@
   color: var(--yellow);
 }
 .hero-content--photo {
-  /* background: red; */
+  /* TODO: Add background color when photo is loading */
   position: relative;
   background: url('../images/age-gate-background3.jpg') no-repeat center center
     fixed;
@@ -186,14 +185,14 @@
 .expand-story-icon {
   position: absolute;
   fill: var(--purpleDark);
+  width: 30px;
   top: 15px;
   right: 15px;
-  width: 30px;
   cursor: pointer;
 }
 .expand-photo-icon {
-  display: none;
   position: absolute;
+  display: none;
   fill: white;
   top: 15px;
   left: 15px;
@@ -278,8 +277,8 @@
 }
 .beer-img {
   width: 100%;
-  height: 100%;
   max-width: 250px;
+  height: 100%;
 }
 
 /************************
@@ -292,6 +291,7 @@
   width: 100%;
 }
 .overlay {
+  background-color: var(--purpleBackgroundLight);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -301,20 +301,19 @@
   width: 100%;
   opacity: 1;
   transition: 0.2s ease;
-  background-color: var(--purpleBackgroundLight);
 }
 .overlay-container:hover .overlay {
   opacity: 1;
 }
 .overlay-text {
   color: white;
-  font-size: 1.5rem;
   position: absolute;
   top: 40%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  font-size: 1.5rem;
   text-align: center;
 }
 
@@ -323,8 +322,8 @@
 *************************/
 
 #contact {
-  height: 100vh;
   background: var(--purple);
+  height: 100vh;
 }
 .contact-form {
   display: flex;
@@ -338,20 +337,20 @@
   margin: 2rem 0;
 }
 .contact-form--inputs {
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 .contact-form--inputs input[type='text'],
 .contact-form--inputs textarea {
+  background: var(--purpleBackgroundLight);
+  color: white;
+  border: 1px solid white;
   width: 80vw;
   max-width: 500px;
-  background: var(--purpleBackgroundLight);
-  border: 1px solid white;
-  color: white;
-  padding: 0.75rem;
   margin: 0.5rem 0;
+  padding: 0.75rem;
   transition: 0.2s;
 }
 .contact-form--inputs input[type='text']:focus,
@@ -359,11 +358,11 @@
   background: var(--purpleDark);
 }
 .contact-form input[type='submit'] {
-  padding: 0.5rem;
-  margin: 1rem 0;
-  width: 20vw;
   background-color: var(--yellow);
   border: 2px solid var(--yellow);
+  margin: 1rem 0;
+  padding: 0.5rem;
+  width: 20vw;
   transition: 0.2s;
 }
 .contact-form input[type='submit']:hover {
@@ -375,10 +374,10 @@
   background-color: var(--purple);
 }
 #policies {
+  color: white;
   text-align: center;
   font-weight: 100;
   margin-top: 4rem;
-  color: white;
   padding: 0 1rem;
 }
 .policy-terms a {
@@ -406,11 +405,11 @@
   .hero-cta {
     background-color: var(--purple);
     color: white;
-    font-weight: 200;
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 40px;
+    font-weight: 200;
   }
   .hero-content--desc p,
   .hero-content--desc h2,

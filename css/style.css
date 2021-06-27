@@ -15,7 +15,7 @@
   --yellow: rgb(255, 247, 28);
   --gray: rgb(211, 211, 211);
 
-  /* Font Sizes */
+  /* TODO: Add Font Sizes */
 }
 
 /************************
@@ -27,11 +27,11 @@
 }
 
 body {
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  letter-spacing: 0.08rem;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-  letter-spacing: 0.08rem;
 }
 
 h1,
@@ -45,6 +45,3 @@ a {
   text-decoration: none;
   transition: 0.2s;
 }
-/* a:hover {
-  opacity: 0.8;
-} */
