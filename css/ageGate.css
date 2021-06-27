@@ -41,7 +41,7 @@
 }
 .age-gate--prompt h2 {
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: var(--medium);
   margin: 2rem 0;
 }
 
@@ -57,11 +57,11 @@
   padding: 0rem 1rem 1rem 1rem;
 }
 .logo span {
-  font-size: 1.5rem;
+  font-size: var(--medium);
   font-weight: 600;
 }
 .logo span:nth-child(2) {
-  font-size: 0.8rem;
+  font-size: var(--small);
   letter-spacing: 0.5rem;
   font-weight: 100;
   text-align: right;
@@ -77,7 +77,7 @@
 }
 
 /************************
-       Validation Form 
+      Validation Form 
 *************************/
 
 .validation-form {
@@ -112,12 +112,12 @@
 
 /* Small text */
 .validation-form--instruction {
-  font-size: 1.2rem;
+  font-size: var(--medium);
   font-weight: 200;
   margin: 0rem auto 2rem;
 }
 .age-gate--prompt .validation-form--legal {
-  font-size: 0.8rem;
+  font-size: var(--small);
   font-weight: 100;
   margin: 0;
 }
@@ -161,6 +161,6 @@
   }
   .age-gate--prompt h2 {
     margin: 0.5rem;
-    font-size: 1.5rem;
+    font-size: var(--medium);
   }
 }

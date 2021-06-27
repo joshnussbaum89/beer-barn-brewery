@@ -13,9 +13,13 @@
   --purpleBackgroundLight: rgba(52, 33, 146, 0.2);
   --purpleBackgroundDark: rgba(52, 33, 146, 0.95);
   --yellow: rgb(255, 247, 28);
-  --gray: rgb(211, 211, 211);
 
-  /* TODO: Add Font Sizes */
+  /* Font Sizes */
+  --small: 0.8rem;
+  --medium: 1.5rem;
+  --largeText: 1.8rem;
+  --largeTitle: 2rem;
+  --extraLarge: 3.5rem;
 }
 
 /************************

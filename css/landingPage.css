@@ -57,12 +57,11 @@
 }
 .mobile--ul a {
   color: white;
-  font-size: 2rem;
+  font-size: var(--largeTitle);
   transition: 0.2s;
 }
 .mobile--ul a:hover {
   color: var(--yellow);
-  font-size: 2rem;
 }
 /* icons */
 .hamburger-icon {
@@ -140,6 +139,9 @@
   padding: 0 2rem;
   height: 450px;
 }
+.hero-content--desc h2 {
+  font-size: var(--medium);
+}
 .hero-content--desc p,
 .hero-content--desc button {
   display: none;
@@ -172,7 +174,7 @@
 .hero-content--photo {
   position: relative;
   background: url('../images/age-gate-background3.jpg') no-repeat center fixed
-    var(--purple);
+    var(--purpleDark);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -211,11 +213,11 @@
   padding: 0rem 1rem 1rem 1rem;
 }
 .logo-landing span {
-  font-size: 1.5rem;
+  font-size: var(--medium);
   font-weight: 600;
 }
 .logo-landing span:nth-child(2) {
-  font-size: 0.8rem;
+  font-size: var(--small);
   letter-spacing: 0.5rem;
   font-weight: 100;
   text-align: right;
@@ -261,8 +263,8 @@
   margin: 4rem 0;
 }
 #beverages h2 {
+  font-size: var(--extraLarge);
   text-align: center;
-  font-size: 3.5em;
   margin: 5rem 0;
 }
 .beer-container {
@@ -273,6 +275,9 @@
 }
 .beer-item {
   height: 100%;
+}
+.beer-item h3 {
+  font-size: var(--medium)
 }
 .beer-img {
   background-color: var(--purpleBackgroundLight);
@@ -313,7 +318,7 @@
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  font-size: 1.5rem;
+  font-size: var(--medium);
   text-align: center;
 }
 
@@ -333,7 +338,7 @@
 }
 .contact-form h2 {
   color: white;
-  font-size: 3.5em;
+  font-size: var(--extraLarge);
   margin: 2rem 0;
 }
 .contact-form--inputs {
