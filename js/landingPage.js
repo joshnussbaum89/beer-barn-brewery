@@ -90,12 +90,17 @@ function displayBeers() {
       `<div class="beer-item">
         <h3>${beer.brand}</h3>
         <p>${beer.type}</p>
-        <img
-          src="${beer.url}"
-          alt="beer"
-          class="beer-img"
-          loading="lazy"
-        />
+        <div class="overlay-container">
+          <img
+            src="${beer.url}"
+            alt="beer"
+            class="beer-img"
+            loading="lazy"
+          />
+          <div class="overlay">
+            <p class="overlay-text">${beer.desc}</p>
+          </div>
+        </div>
       </div>`
     );
   });

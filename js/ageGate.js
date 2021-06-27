@@ -87,11 +87,11 @@ function determineAgeOnSubmit(e) {
   if (userEnteredBadInfo()) {
     e.preventDefault();
     userIsOver21 = false;
-    displayValidationTip("Something doesn't look right...");
+    displayValidationTip("Something doesn't look right...", 'red');
   } else if (userAge < 21) {
     e.preventDefault();
     userIsOver21 = false;
-    displayValidationTip('Sorry, you must be at least 21 to enter 🍼');
+    displayValidationTip('Sorry, you must be at least 21 to enter 🍼', 'red');
   } else if (userAge >= 21) {
     e.preventDefault();
     userIsOver21 = true;
@@ -121,12 +121,12 @@ function userEnteredBadInfo() {
 /**
  * Change validation instruction if user isn't of age
  */
-function displayValidationTip(tip) {
+function displayValidationTip(tip, color) {
   const validationInstruction = document.querySelector(
     '.validation-form--instruction'
   );
 
-  validationInstruction.style.color = 'red';
+  validationInstruction.style.color = color;
   validationInstruction.textContent = tip;
 }
 
@@ -137,10 +137,12 @@ function displayValidationTip(tip) {
  */
 function rememberUserAge() {
   if (checkbox.checked) {
+    displayValidationTip('Your information is saved!', 'green');
     localStorage.setItem('month', monthInput.value);
     localStorage.setItem('day', dayInput.value);
     localStorage.setItem('year', yearInput.value);
   } else {
+    displayValidationTip('Your information was successfully removed.', 'green');
     localStorage.removeItem('month');
     localStorage.removeItem('day');
     localStorage.removeItem('year');
