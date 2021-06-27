@@ -14,13 +14,19 @@ const navigation = document.querySelector('.navigation');
  * Mobile navigation toggle functions
  */
 function closeNavigation() {
-  mobileOverlay.style.display = 'none';
+  mobileOverlay.style.opacity = '0';
+  setTimeout(() => {
+    mobileOverlay.style.display = 'none';
+  }, 100);
 }
 function openNavigation() {
   mobileOverlay.style.display = 'block';
+  setTimeout(() => {
+    mobileOverlay.style.opacity = '1';
+  }, 100);
 }
 function closeNavigationOnScroll() {
-  if (window.scrollY > 0) mobileOverlay.style.display = 'none';
+  if (window.scrollY > 0) closeNavigation();
 }
 
 /**
@@ -38,7 +44,7 @@ function toggleExpandIconDisplay(storyDisplay, photoDisplay) {
  * @param {string} display
  */
 function toggleDescTextDisplay(display) {
-  heroContentDescH2.style.display = display;
+  // heroContentDescH2.style.display = display;
   heroContentDescP.style.display = display;
   heroContentDescBtn.style.display = display;
 }
@@ -88,6 +94,7 @@ function displayBeers() {
           src="${beer.url}"
           alt="beer"
           class="beer-img"
+          loading="lazy"
         />
       </div>`
     );

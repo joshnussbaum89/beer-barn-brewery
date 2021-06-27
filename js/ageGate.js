@@ -78,7 +78,7 @@ function calculateAge(dob) {
  * @returns true or false
  */
 function determineAgeOnSubmit(e) {
-  const monthValue = +monthInput.value;
+  const monthValue = +monthInput.value - 1;
   const dayValue = +dayInput.value;
   const yearValue = +yearInput.value;
   const userAge = calculateAge(new Date(yearValue, monthValue, dayValue));

@@ -38,6 +38,8 @@
   z-index: 100;
   left: 0;
   top: 0;
+  opacity: 0;
+  transition: 0.2s;
 }
 .mobile--ul {
   position: relative;
@@ -49,6 +51,9 @@
 }
 .mobile--ul li {
   margin: 3rem 0;
+}
+.mobile--ul li:nth-of-type(3) {
+  margin-bottom: 5rem;
 }
 .mobile--ul a {
   color: white;
@@ -71,8 +76,23 @@
   top: 2rem;
   right: 2rem;
   fill: white;
-  width: 1.75rem;
+  width: 1.6rem;
   cursor: pointer;
+}
+.mobile-icon--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mobile-icon {
+  fill: white;
+  width: 30px;
+  margin: 0 2rem;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.mobile-icon:hover {
+  fill: var(--yellow);
 }
 
 /************************
@@ -121,7 +141,7 @@
   height: 450px;
 }
 .hero-content--desc p,
-.hero-content--desc h2,
+/* .hero-content--desc h2, */
 .hero-content--desc button {
   display: none;
   margin: 1rem 0;
@@ -151,6 +171,7 @@
   color: var(--yellow);
 }
 .hero-content--photo {
+  /* background: red; */
   position: relative;
   background: url('../images/age-gate-background3.jpg') no-repeat center center
     fixed;
