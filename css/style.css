@@ -13,6 +13,7 @@
   --purpleBackgroundLight: rgba(52, 33, 146, 0.2);
   --purpleBackgroundDark: rgba(52, 33, 146, 0.95);
   --yellow: rgb(255, 247, 28);
+  --gray: rgb(234, 234, 234);
 
   /* Font Sizes */
   --small: 0.8rem;

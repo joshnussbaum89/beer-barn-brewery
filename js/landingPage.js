@@ -9,6 +9,7 @@ const closeIcon = document.querySelector('.close-icon');
 const hamburgerIcon = document.querySelector('.hamburger-icon');
 const mobileOverlay = document.querySelector('.mobile-overlay');
 const navigation = document.querySelector('.navigation');
+const beverageNavTypes = document.querySelector('.beverages-nav--types');
 
 /**
  * Mobile navigation toggle functions
@@ -79,31 +80,88 @@ function toggleTextOnWindowResize() {
 }
 
 /**
- * Display beers from data.js to DOM
+ * Toggle 'active' class on span elements and 'active' key in data object.
+ * Call the displayBeers function, passing in the new filteredBeers array.
+ * @param {object} e click event object
  */
-function displayBeers() {
-  const beerContainer = document.querySelector('.beer-container');
+function filterBeveragesByTags(e) {
+  let filteredBeers = [];
 
+  // Toggle 'active' class on span elements
+  if (e.target.tagName === 'SPAN') {
+    e.target.classList.toggle('active');
+    if (e.target.classList.contains('active')) {
+    }
+  }
+
+  // Toggle 'active' key on data array items
   data.forEach((beer) => {
-    beerContainer.insertAdjacentHTML(
-      'beforeend',
-      `<div class="beer-item">
-        <h3>${beer.brand}</h3>
-        <p>${beer.type}</p>
-        <div class="overlay-container">
-          <img
+    if (beer.type === e.target.textContent && !beer.active) {
+      beer.active = true;
+    } else if (
+      beer.type === e.target.textContent &&
+      !e.target.classList.contains('active')
+    ) {
+      beer.active = false;
+    }
+  });
+
+  // Search for active beer items
+  filteredBeers = data.filter((beer) => beer.active === true);
+  displayBeers(filteredBeers);
+}
+
+/**
+ * Display all beer info on page load or info specific to user selections
+ * @param {array} filteredBeerArr
+ */
+function displayBeers(filteredBeerArr) {
+  const beerContainer = document.querySelector('.beer-container');
+  let beerHTML = '';
+
+  if (!filteredBeerArr.length) {
+    data.forEach((beer) => {
+      beerHTML += `
+        <div class="beer-item">
+          <h3>${beer.brand}</h3>
+          <p>${beer.type}</p>
+          <div class="overlay-container">
+            <img
             src="${beer.url}"
             alt="beer"
             class="beer-img"
             loading="lazy"
-          />
-          <div class="overlay">
-            <p class="overlay-text">${beer.desc}</p>
+            />
+            <div class="overlay">
+              <p class="overlay-text">${beer.desc}</p>
+            </div>
           </div>
         </div>
-      </div>`
-    );
-  });
+      `;
+    });
+  } else {
+    filteredBeerArr.forEach((beer) => {
+      beerHTML += `
+        <div class="beer-item">
+          <h3>${beer.brand}</h3>
+          <p>${beer.type}</p>
+          <div class="overlay-container">
+            <img
+            src="${beer.url}"
+            alt="beer"
+            class="beer-img"
+            loading="lazy"
+            />
+            <div class="overlay">
+              <p class="overlay-text">${beer.desc}</p>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+  }
+
+  beerContainer.innerHTML = beerHTML;
 }
 
 // Event listeners
@@ -114,3 +172,4 @@ expandStory.addEventListener('click', expandStorySection);
 expandPhoto.addEventListener('click', expandPhotoSection);
 closeIcon.addEventListener('click', closeNavigation);
 hamburgerIcon.addEventListener('click', openNavigation);
+beverageNavTypes.addEventListener('click', filterBeveragesByTags);

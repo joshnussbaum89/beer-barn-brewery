@@ -265,7 +265,28 @@
 #beverages h2 {
   font-size: var(--extraLarge);
   text-align: center;
+}
+.beverages-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 5rem 0;
+}
+.beverages-nav--types {
+  margin: 2rem 1rem;
+}
+.beverages-nav--types span {
+  background-color: var(--gray);
+  display: inline-block;
+  margin: 0.2rem;
+  padding: 0.4rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.beverages-nav--types span.active {
+  background-color: var(--purpleBackgroundDark);
+  color: white;
+  border: none;
 }
 .beer-container {
   display: grid;
@@ -277,7 +298,7 @@
   height: 100%;
 }
 .beer-item h3 {
-  font-size: var(--medium)
+  font-size: var(--medium);
 }
 .beer-img {
   background-color: var(--purpleBackgroundLight);
@@ -424,14 +445,14 @@
   .beer-container {
     grid-template-columns: 1fr 1fr;
   }
-  .overlay {
-    opacity: 0;
-  }
 }
 
 @media (min-width: 1024px) {
   .beer-container {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+  .overlay {
+    opacity: 0;
   }
 }
 

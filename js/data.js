@@ -1,10 +1,11 @@
-const data = [
+let data = [
   {
     id: 0,
     type: 'Amber Ale',
     brand: 'Beekers',
     desc: 'Bright & Bold',
     url: '../images/beers/amber-ale.jpg',
+    active: false,
   },
   {
     id: 1,
@@ -12,6 +13,7 @@ const data = [
     brand: 'Moon Crew',
     desc: 'Silky & Smooth',
     url: '../images/beers/cider.jpg',
+    active: false,
   },
   {
     id: 2,
@@ -19,6 +21,7 @@ const data = [
     brand: 'Determinator',
     desc: 'Floral & Piney',
     url: '../images/beers/ipa.jpg',
+    active: false,
   },
   {
     id: 3,
@@ -26,6 +29,7 @@ const data = [
     brand: 'Little Bunny',
     desc: 'Fruity & Strong',
     url: '../images/beers/ipa2.jpg',
+    active: false,
   },
   {
     id: 4,
@@ -33,6 +37,7 @@ const data = [
     brand: 'Tuengling',
     desc: 'Light & Crisp',
     url: '../images/beers/lager.jpg',
+    active: false,
   },
   {
     id: 5,
@@ -40,6 +45,7 @@ const data = [
     brand: 'Liquid Karma',
     desc: 'Mellow & Smooth',
     url: '../images/beers/lager2.jpg',
+    active: false,
   },
   {
     id: 6,
@@ -47,6 +53,7 @@ const data = [
     brand: 'Cosmic Hops',
     desc: 'Light & Floral',
     url: '../images/beers/pilsner.jpg',
+    active: false,
   },
   {
     id: 7,
@@ -54,6 +61,7 @@ const data = [
     brand: 'Lards',
     desc: 'Crisp & Golden',
     url: '../images/beers/pilsner2.jpg',
+    active: false,
   },
   {
     id: 8,
@@ -61,5 +69,6 @@ const data = [
     brand: 'Nice To Wheat You',
     desc: 'Mild & Refreshing',
     url: '../images/beers/wheat.jpg',
+    active: false,
   },
 ];
