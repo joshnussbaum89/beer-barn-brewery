@@ -109,20 +109,15 @@
 .validation-form--inputs input[type='text']:focus {
   background: var(--purpleDark);
 }
-
-/* Small text */
 .validation-form--instruction {
-  font-size: var(--medium);
   font-weight: 200;
   margin: 0rem auto 2rem;
 }
 .age-gate--prompt .validation-form--legal {
   font-size: var(--small);
-  font-weight: 100;
+  font-weight: 200;
   margin: 0;
 }
-
-/* "Enter" button */
 .validation-form input[type='submit'] {
   background-color: var(--yellow);
   color: var(--purpleDark);
@@ -144,6 +139,14 @@
       Media Queries 
 *************************/
 
+/* Extra small screens */
+@media (max-width: 300px) {
+  .logo {
+    display: none;
+  }
+}
+
+/* Medium screens */
 @media (min-width: 768px) {
   .age-gate--prompt {
     padding: 2rem 4rem;
@@ -153,7 +156,7 @@
   }
 }
 
-/* landscape orientiation mobile screens */
+/* Landscape devices */
 @media (max-height: 525px) {
   .age-gate--prompt {
     padding: 2rem 4rem;

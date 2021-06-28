@@ -65,9 +65,7 @@ function expandPhotoSection() {
   heroContent.style.gridTemplateColumns = '1fr 3fr';
   toggleExpandIconDisplay('block', 'none');
 
-  if (window.innerWidth < 768) {
-    toggleDescTextDisplay('none');
-  }
+  if (window.innerWidth < 768) toggleDescTextDisplay('none');
 }
 function toggleTextOnWindowResize() {
   if (window.innerWidth < 768) {
@@ -85,23 +83,22 @@ function toggleTextOnWindowResize() {
  * @param {object} e click event object
  */
 function filterBeveragesByTags(e) {
+  const { target } = e;
+  const {
+    textContent: targetText,
+    classList: targetClass,
+    tagName: targetTagName,
+  } = target;
   let filteredBeers = [];
 
   // Toggle 'active' class on span elements
-  if (e.target.tagName === 'SPAN') {
-    e.target.classList.toggle('active');
-    if (e.target.classList.contains('active')) {
-    }
-  }
+  if (targetTagName === 'SPAN') targetClass.toggle('active');
 
   // Toggle 'active' key on data array items
   data.forEach((beer) => {
-    if (beer.type === e.target.textContent && !beer.active) {
+    if (beer.type === targetText && !beer.active) {
       beer.active = true;
-    } else if (
-      beer.type === e.target.textContent &&
-      !e.target.classList.contains('active')
-    ) {
+    } else if (beer.type === targetText && !targetClass.contains('active')) {
       beer.active = false;
     }
   });
@@ -116,7 +113,6 @@ function filterBeveragesByTags(e) {
  * @param {array} filteredBeerArr
  */
 function displayBeers(filteredBeerArr) {
-  const beerContainer = document.querySelector('.beer-container');
   let beerHTML = '';
 
   if (!filteredBeerArr.length) {
@@ -128,7 +124,7 @@ function displayBeers(filteredBeerArr) {
           <div class="overlay-container">
             <img
             src="${beer.url}"
-            alt="beer"
+            alt="${beer.brand} ${beer.type}"
             class="beer-img"
             loading="lazy"
             />
@@ -148,7 +144,7 @@ function displayBeers(filteredBeerArr) {
           <div class="overlay-container">
             <img
             src="${beer.url}"
-            alt="beer"
+            alt="${beer.brand} ${beer.type}"
             class="beer-img"
             loading="lazy"
             />
@@ -161,7 +157,8 @@ function displayBeers(filteredBeerArr) {
     });
   }
 
-  beerContainer.innerHTML = beerHTML;
+  // Update the beers displayed
+  document.querySelector('.beer-container').innerHTML = beerHTML;
 }
 
 // Event listeners
@@ -170,6 +167,6 @@ window.addEventListener('resize', toggleTextOnWindowResize);
 window.addEventListener('scroll', closeNavigationOnScroll);
 expandStory.addEventListener('click', expandStorySection);
 expandPhoto.addEventListener('click', expandPhotoSection);
-closeIcon.addEventListener('click', closeNavigation);
 hamburgerIcon.addEventListener('click', openNavigation);
+closeIcon.addEventListener('click', closeNavigation);
 beverageNavTypes.addEventListener('click', filterBeveragesByTags);

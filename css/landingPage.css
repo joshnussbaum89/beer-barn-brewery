@@ -27,8 +27,6 @@
   align-items: center;
   padding: 1rem;
 }
-
-/* Overlay */
 .mobile-overlay {
   position: fixed;
   background: var(--purple);
@@ -63,6 +61,7 @@
 .mobile--ul a:hover {
   color: var(--yellow);
 }
+
 /* icons */
 .hamburger-icon {
   fill: var(--purpleDark);
@@ -173,7 +172,7 @@
 }
 .hero-content--photo {
   position: relative;
-  background: url('../images/age-gate-background3.jpg') no-repeat center fixed
+  background: url('../images/hero-background.jpg') no-repeat center fixed
     var(--purpleDark);
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -414,9 +413,17 @@
 }
 
 /************************
-        Media Queries 
+      Media Queries 
 *************************/
 
+/* Extra small screens */
+@media (max-width: 315px) {
+  .logo-landing {
+    display: none;
+  }
+}
+
+/* Medium screens */
 @media (min-width: 768px) {
   .navigation {
     padding: 1rem 2rem;
@@ -447,6 +454,7 @@
   }
 }
 
+/* Large screens */
 @media (min-width: 1024px) {
   .beer-container {
     grid-template-columns: 1fr 1fr 1fr;
@@ -456,6 +464,7 @@
   }
 }
 
+/* Landscape devices */
 @media (max-height: 590px) {
   #contact {
     height: initial;

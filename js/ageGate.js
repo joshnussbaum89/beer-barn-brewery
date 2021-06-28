@@ -34,7 +34,7 @@ function replaceLettersWithNumbers(e) {
  * @returns
  */
 function changeInputBorderColor(input, color) {
-  return (input.style.border = `1px solid ${color}`);
+  input.style.border = `1px solid ${color}`;
 }
 
 /**
@@ -78,6 +78,7 @@ function calculateAge(dob) {
  * @returns true or false
  */
 function determineAgeOnSubmit(e) {
+  // Months are 0 indexed, subtract 1 from user month entry for accurate age calc
   const monthValue = +monthInput.value - 1;
   const dayValue = +dayInput.value;
   const yearValue = +yearInput.value;
