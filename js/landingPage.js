@@ -103,8 +103,9 @@ function filterBeveragesByTags(e) {
     }
   });
 
-  // Search for active beer items
+  // Search for active beer items and display to DOM
   filteredBeers = data.filter((beer) => beer.active === true);
+
   displayBeers(filteredBeers);
 }
 

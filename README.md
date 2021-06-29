@@ -10,6 +10,6 @@
 6. Beverages section updates dynamically when user clicks individual tags.
 7. Hovering over beer images reveals a beer description.
 
-## Design Philosophy
+## Design
 
 My intention for this challenge was to keep everything as simple and elegant as possible. Font sizes and colors are kept consistent by using CSS variables. My main goal was give the user a fun UI to navigate and to make sure finding all necessary information is a breeze. Enjoy!

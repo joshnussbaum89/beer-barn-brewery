@@ -6,7 +6,6 @@ const checkbox = document.querySelector('input[type="checkbox"]');
 const monthInput = document.querySelector('input[name="MM"]');
 const dayInput = document.querySelector('input[name="DD"]');
 const yearInput = document.querySelector('input[name="YYYY"]');
-let month, day, year;
 
 // Hide landing page initially
 homepage.style.display = 'none';
@@ -78,7 +77,7 @@ function calculateAge(dob) {
  * @returns true or false
  */
 function determineAgeOnSubmit(e) {
-  // Months are 0 indexed, subtract 1 from user month entry for accurate age calc
+  // Months are 0 indexed, subtract 1 from users month entry for accurate age calc
   const monthValue = +monthInput.value - 1;
   const dayValue = +dayInput.value;
   const yearValue = +yearInput.value;
@@ -107,16 +106,15 @@ function determineAgeOnSubmit(e) {
  * @returns true or false
  */
 function userEnteredBadInfo() {
-  if (
+  const infoIsBad =
     +monthInput.value < 1 ||
     +monthInput.value > 12 ||
     +dayInput.value < 1 ||
     +dayInput.value > 31 ||
     +yearInput.value > new Date().getFullYear() ||
-    +yearInput.value < 1880
-  ) {
-    return true;
-  }
+    +yearInput.value < 1880;
+
+  return infoIsBad;
 }
 
 /**
