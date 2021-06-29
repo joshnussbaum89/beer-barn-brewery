@@ -5,12 +5,14 @@
 #age-gate {
   position: relative;
   height: 100vh;
-  background: url('../images/age-gate-background.jpg') no-repeat center center
-    fixed var(--purpleBackgroundLight);
+  background-color: var(--purpleBackgroundLight);
+  background-image: url('../images/age-gate-background.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
 }
 .age-gate--overlay {
   position: absolute;

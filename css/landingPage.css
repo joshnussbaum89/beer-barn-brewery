@@ -172,12 +172,14 @@
 }
 .hero-content--photo {
   position: relative;
-  background: url('../images/hero-background.jpg') no-repeat center fixed
-    var(--purpleDark);
+  background-color: var(--purpleDark);
+  background-image: url('../images/hero-background.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
   height: 450px;
 }
 

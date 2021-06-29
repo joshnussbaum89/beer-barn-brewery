@@ -45,7 +45,6 @@ function toggleExpandIconDisplay(storyDisplay, photoDisplay) {
  * @param {string} display
  */
 function toggleDescTextDisplay(display) {
-  // heroContentDescH2.style.display = display;
   heroContentDescP.style.display = display;
   heroContentDescBtn.style.display = display;
 }
