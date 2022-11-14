@@ -11,7 +11,7 @@ Template business landing page with an age gate (21+) 🍻
 3. 'Remember me' checkbox saves user data to localStorage
 4. Clicking the hamburger menu on mobile reveals a full screen navigation menu
 5. Hero section has flexible columns that can be toggled with arrow icons in container
-6. Beverages section updates dynamically when user clicks individual tags
+6. Beverages section filters dynamically when user clicks individual tags
 7. Hovering over beer images reveals a beer description
 
 ## Design
