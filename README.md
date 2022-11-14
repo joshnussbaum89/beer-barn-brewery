@@ -1,14 +1,18 @@
-# Age Gate
+# Beer Barn Brewery (fake biz)
+
+## What is this?
+
+Template business landing page with an age gate (21+) 🍻
 
 ## Features
 
-1. Mobile Responsive on all browser breakpoints, including landscape orientation.
-2. Age validation on age gate form checks for user age but also bad data entries.
-3. 'Remember me' checkbox saves user data to localStorage.
-4. Clicking the hamburger menu on mobile reveals a full screen navigation menu.
-5. Hero section has flexible columns that can be toggled with arrow icons in container.
-6. Beverages section updates dynamically when user clicks individual tags.
-7. Hovering over beer images reveals a beer description.
+1. Mobile Responsive on all browser breakpoints, including landscape orientation
+2. Age validation on age gate form checks for user age but also bad data entries
+3. 'Remember me' checkbox saves user data to localStorage
+4. Clicking the hamburger menu on mobile reveals a full screen navigation menu
+5. Hero section has flexible columns that can be toggled with arrow icons in container
+6. Beverages section updates dynamically when user clicks individual tags
+7. Hovering over beer images reveals a beer description
 
 ## Design
 
