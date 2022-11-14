@@ -72,4 +72,4 @@ const data = [
     url: './images/beers/wheat.jpg',
     active: false,
   },
-];
+]

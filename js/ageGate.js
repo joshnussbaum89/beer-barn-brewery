@@ -1,20 +1,20 @@
 // Global bindings
-const homepage = document.querySelector('#homepage');
-const form = document.querySelector('.validation-form');
-const inputs = document.querySelectorAll('.validation-input');
-const checkbox = document.querySelector('input[type="checkbox"]');
-const monthInput = document.querySelector('input[name="MM"]');
-const dayInput = document.querySelector('input[name="DD"]');
-const yearInput = document.querySelector('input[name="YYYY"]');
+const homepage = document.querySelector('#homepage')
+const form = document.querySelector('.validation-form')
+const inputs = document.querySelectorAll('.validation-input')
+const checkbox = document.querySelector('input[type="checkbox"]')
+const monthInput = document.querySelector('input[name="MM"]')
+const dayInput = document.querySelector('input[name="DD"]')
+const yearInput = document.querySelector('input[name="YYYY"]')
 
 // Hide landing page initially
-homepage.style.display = 'none';
+homepage.style.display = 'none'
 
 // Check if user checked 'remember me'
 if (window.localStorage.length > 0) {
-  monthInput.value = window.localStorage.month;
-  dayInput.value = window.localStorage.day;
-  yearInput.value = window.localStorage.year;
+  monthInput.value = window.localStorage.month
+  dayInput.value = window.localStorage.day
+  yearInput.value = window.localStorage.year
 }
 
 /**
@@ -24,7 +24,7 @@ if (window.localStorage.length > 0) {
 function replaceLettersWithNumbers(e) {
   return (e.target.value = e.target.value
     .replace(/[^0-9.]/g, '')
-    .replace(/(\..*)\./g, '$1'));
+    .replace(/(\..*)\./g, '$1'))
 }
 
 /**
@@ -33,7 +33,7 @@ function replaceLettersWithNumbers(e) {
  * @returns
  */
 function changeInputBorderColor(input, color) {
-  input.style.border = `1px solid ${color}`;
+  input.style.border = `1px solid ${color}`
 }
 
 /**
@@ -44,19 +44,19 @@ function validateMonthInRealTime() {
   monthInput.value >= 1 &&
   monthInput.value <= 12
     ? changeInputBorderColor(monthInput, 'green')
-    : changeInputBorderColor(monthInput, 'red');
+    : changeInputBorderColor(monthInput, 'red')
 }
 function validateDayInRealTime() {
   dayInput.value.length === 2 && dayInput.value >= 1 && dayInput.value <= 31
     ? changeInputBorderColor(dayInput, 'green')
-    : changeInputBorderColor(dayInput, 'red');
+    : changeInputBorderColor(dayInput, 'red')
 }
 function validateYearInRealTime() {
   yearInput.value.length === 4 &&
   yearInput.value >= 1880 &&
   yearInput.value < new Date().getFullYear()
     ? changeInputBorderColor(yearInput, 'green')
-    : changeInputBorderColor(yearInput, 'red');
+    : changeInputBorderColor(yearInput, 'red')
 }
 
 /**
@@ -65,10 +65,10 @@ function validateYearInRealTime() {
  * @returns user age
  */
 function calculateAge(dob) {
-  const difference = Date.now() - dob.getTime();
-  const age = new Date(difference);
+  const difference = Date.now() - dob.getTime()
+  const age = new Date(difference)
 
-  return Math.abs(age.getUTCFullYear() - 1970);
+  return Math.abs(age.getUTCFullYear() - 1970)
 }
 
 /**
@@ -78,27 +78,27 @@ function calculateAge(dob) {
  */
 function determineAgeOnSubmit(e) {
   // Months are 0 indexed, subtract 1 from users month entry for accurate age calc
-  const monthValue = +monthInput.value - 1;
-  const dayValue = +dayInput.value;
-  const yearValue = +yearInput.value;
-  const userAge = calculateAge(new Date(yearValue, monthValue, dayValue));
-  let userIsOver21;
+  const monthValue = +monthInput.value - 1
+  const dayValue = +dayInput.value
+  const yearValue = +yearInput.value
+  const userAge = calculateAge(new Date(yearValue, monthValue, dayValue))
+  let userIsOver21
 
   if (userEnteredBadInfo()) {
-    e.preventDefault();
-    userIsOver21 = false;
-    displayValidationTip("Something doesn't look right...", 'red');
+    e.preventDefault()
+    userIsOver21 = false
+    displayValidationTip("Something doesn't look right...", 'red')
   } else if (userAge < 21) {
-    e.preventDefault();
-    userIsOver21 = false;
-    displayValidationTip('Sorry, you must be at least 21 to enter 🍼', 'red');
+    e.preventDefault()
+    userIsOver21 = false
+    displayValidationTip('Sorry, you must be at least 21 to enter 🍼', 'red')
   } else if (userAge >= 21) {
-    e.preventDefault();
-    userIsOver21 = true;
-    enterSite();
+    e.preventDefault()
+    userIsOver21 = true
+    enterSite()
   }
 
-  return userIsOver21;
+  return userIsOver21
 }
 
 /**
@@ -112,9 +112,9 @@ function userEnteredBadInfo() {
     +dayInput.value < 1 ||
     +dayInput.value > 31 ||
     +yearInput.value > new Date().getFullYear() ||
-    +yearInput.value < 1880;
+    +yearInput.value < 1880
 
-  return infoIsBad;
+  return infoIsBad
 }
 
 /**
@@ -123,10 +123,10 @@ function userEnteredBadInfo() {
 function displayValidationTip(tip, color) {
   const validationInstruction = document.querySelector(
     '.validation-form--instruction'
-  );
+  )
 
-  validationInstruction.style.color = color;
-  validationInstruction.textContent = tip;
+  validationInstruction.style.color = color
+  validationInstruction.textContent = tip
 }
 
 /**
@@ -136,15 +136,15 @@ function displayValidationTip(tip, color) {
  */
 function rememberUserAge() {
   if (checkbox.checked) {
-    displayValidationTip('Your information is saved!', 'green');
-    localStorage.setItem('month', monthInput.value);
-    localStorage.setItem('day', dayInput.value);
-    localStorage.setItem('year', yearInput.value);
+    displayValidationTip('Your information is saved!', 'green')
+    localStorage.setItem('month', monthInput.value)
+    localStorage.setItem('day', dayInput.value)
+    localStorage.setItem('year', yearInput.value)
   } else {
-    displayValidationTip('Your information was successfully removed.', 'green');
-    localStorage.removeItem('month');
-    localStorage.removeItem('day');
-    localStorage.removeItem('year');
+    displayValidationTip('Your information was successfully removed.', 'green')
+    localStorage.removeItem('month')
+    localStorage.removeItem('day')
+    localStorage.removeItem('year')
   }
 }
 
@@ -152,16 +152,16 @@ function rememberUserAge() {
  * Removes entire age gate so user can enter main site
  */
 function enterSite() {
-  document.querySelector('#age-gate').style.display = 'none';
-  homepage.style.display = 'block';
+  document.querySelector('#age-gate').style.display = 'none'
+  homepage.style.display = 'block'
 }
 
 // Event listeners
-monthInput.addEventListener('keyup', validateMonthInRealTime);
-dayInput.addEventListener('keyup', validateDayInRealTime);
-yearInput.addEventListener('keyup', validateYearInRealTime);
-form.addEventListener('submit', determineAgeOnSubmit);
-checkbox.addEventListener('click', rememberUserAge);
+monthInput.addEventListener('keyup', validateMonthInRealTime)
+dayInput.addEventListener('keyup', validateDayInRealTime)
+yearInput.addEventListener('keyup', validateYearInRealTime)
+form.addEventListener('submit', determineAgeOnSubmit)
+checkbox.addEventListener('click', rememberUserAge)
 inputs.forEach((input) => {
-  input.addEventListener('input', replaceLettersWithNumbers);
-});
+  input.addEventListener('input', replaceLettersWithNumbers)
+})
