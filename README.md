@@ -1,4 +1,4 @@
-# Wyng Age Gate
+# Age Gate
 
 ## Features
 
