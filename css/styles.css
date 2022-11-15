@@ -1,3 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  /* Colors */
+  --purple: rgba(52, 33, 146);
+  --purpleDark: rgb(19, 12, 54);
+  --purpleBackgroundLight: rgba(52, 33, 146, 0.2);
+  --purpleBackgroundDark: rgba(52, 33, 146, 0.95);
+  --yellow: rgb(255, 247, 28);
+  --gray: rgb(234, 234, 234);
+
+  /* Sizes */
+  --small: 0.8rem;
+  --medium: 1.5rem;
+  --largeText: 1.8rem;
+  --largeTitle: 2rem;
+  --extraLarge: 3.5rem;
+}
+
+/**********************
+        Global 
+***********************/
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.08rem;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+/************************
+        Age gate 
+*************************/
+
+#age-gate {
+  position: relative;
+  height: 100vh;
+  background-color: var(--purpleBackgroundLight);
+  background-image: url('../assets/age-gate-background.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+.age-gate--overlay {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: var(--purpleBackgroundLight);
+}
+.age-gate--prompt {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--purpleBackgroundDark);
+  box-shadow: 0 0 50px var(--purpleDark);
+  color: white;
+  padding: 2rem;
+  height: 60%;
+  width: 80vw;
+  max-width: 500px;
+  border-radius: 1rem;
+}
+.age-gate--prompt h2 {
+  font-weight: 600;
+  font-size: var(--medium);
+  margin: 2rem 0;
+}
+
+/************************
+          Logo 
+*************************/
+
+.logo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: var(--yellow);
+  padding: 0rem 1rem 1rem 1rem;
+}
+.logo span {
+  font-size: var(--medium);
+  font-weight: 600;
+}
+.logo span:nth-child(2) {
+  font-size: var(--small);
+  letter-spacing: 0.5rem;
+  font-weight: 100;
+  text-align: right;
+  text-transform: uppercase;
+}
+.logo-icon {
+  position: absolute;
+  top: 25px;
+  left: 28px;
+  width: 35px;
+  height: 35px;
+  fill: var(--yellow);
+}
+
+/************************
+     Validation Form 
+*************************/
+
+.validation-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.validation-form--inputs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+#rememberMe {
+  margin-right: 1rem;
+}
+.validation-form--rememberMe {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+.validation-form--inputs input[type='text'] {
+  background: var(--purpleBackgroundLight);
+  border: 1px solid white;
+  color: white;
+  padding: 0.75rem;
+  width: 24%;
+  transition: 0.2s;
+}
+.validation-form--inputs input[type='text']:focus {
+  background: var(--purpleDark);
+}
+.validation-form--instruction {
+  font-weight: 200;
+  margin: 0rem auto 2rem;
+}
+.age-gate--prompt .validation-form--legal {
+  font-size: var(--small);
+  font-weight: 200;
+  margin: 0;
+}
+.validation-form input[type='submit'] {
+  background-color: var(--yellow);
+  color: var(--purpleDark);
+  border: 2px solid var(--yellow);
+  margin: 1rem 0;
+  padding: 0.5rem;
+  transition: 0.2s;
+}
+.validation-form input[type='submit']:hover {
+  background-color: var(--purple);
+  color: var(--yellow);
+  cursor: pointer;
+}
+.validation-form input[type='submit']:active {
+  background-color: var(--purple);
+}
+
 /************************
        Landing Page 
 *************************/
@@ -173,7 +359,7 @@
 .hero-content--photo {
   position: relative;
   background-color: var(--purpleDark);
-  background-image: url('../images/hero-background.jpg');
+  background-image: url('../assets/hero-background.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -306,6 +492,7 @@
   width: 100%;
   max-width: 250px;
   height: 100%;
+  object-fit: cover;
 }
 
 /************************
@@ -420,6 +607,9 @@
 
 /* Extra small screens */
 @media (max-width: 315px) {
+  .logo {
+    display: none;
+  }
   .logo-landing {
     display: none;
   }
@@ -427,6 +617,15 @@
 
 /* Medium screens */
 @media (min-width: 768px) {
+  /* Age gate */
+  .age-gate--prompt {
+    padding: 2rem 4rem;
+  }
+  .age-gate--prompt h2 {
+    font-size: 1.8rem;
+  }
+
+  /* Landing page */
   .navigation {
     padding: 1rem 2rem;
   }
@@ -467,6 +666,17 @@
 }
 
 /* Landscape devices */
+@media (max-height: 525px) {
+  .age-gate--prompt {
+    padding: 2rem 4rem;
+    height: 82%;
+  }
+  .age-gate--prompt h2 {
+    margin: 0.5rem;
+    font-size: var(--medium);
+  }
+}
+
 @media (max-height: 590px) {
   #contact {
     height: initial;

@@ -11,6 +11,100 @@ const mobileOverlay = document.querySelector('.mobile-overlay')
 const navigation = document.querySelector('.navigation')
 const beverageNavTypes = document.querySelector('.beverages-nav--types')
 
+// Beer data
+const data = [
+  {
+    id: 0,
+    type: 'Amber Ale',
+    brand: 'Beekers',
+    desc: 'Bright & Bold',
+    url: './assets/beers/amber-ale.jpg',
+    width: '4972',
+    height: '7458',
+    active: false,
+  },
+  {
+    id: 1,
+    type: 'Cider',
+    brand: 'Moon Crew',
+    desc: 'Silky & Smooth',
+    url: './assets/beers/cider.jpg',
+    width: '4000',
+    height: '6000',
+    active: false,
+  },
+  {
+    id: 2,
+    type: 'IPA',
+    brand: 'Determinator',
+    desc: 'Floral & Piney',
+    url: './assets/beers/ipa.jpg',
+    width: '4000',
+    height: '6000',
+    active: false,
+  },
+  {
+    id: 3,
+    type: 'IPA',
+    brand: 'Little Bunny',
+    desc: 'Fruity & Strong',
+    url: './assets/beers/ipa2.jpg',
+    width: '2400',
+    height: '3600',
+    active: false,
+  },
+  {
+    id: 4,
+    type: 'Lager',
+    brand: 'Tuengling',
+    desc: 'Light & Crisp',
+    url: './assets/beers/lager.jpg',
+    width: '4090',
+    height: '5112',
+    active: false,
+  },
+  {
+    id: 5,
+    type: 'Lager',
+    brand: 'Liquid Karma',
+    desc: 'Mellow & Smooth',
+    url: './assets/beers/lager2.jpg',
+    width: '3024',
+    height: '4032',
+    active: false,
+  },
+  {
+    id: 6,
+    type: 'Pilsner',
+    brand: 'Cosmic Hops',
+    desc: 'Light & Floral',
+    url: './assets/beers/pilsner.jpg',
+    width: '3757',
+    height: '5636',
+    active: false,
+  },
+  {
+    id: 7,
+    type: 'Pilsner',
+    brand: 'Lards',
+    desc: 'Crisp & Golden',
+    url: './assets/beers/pilsner2.jpg',
+    width: '2430',
+    height: '3038',
+    active: false,
+  },
+  {
+    id: 8,
+    type: 'Wheat',
+    brand: 'Nice To Wheat You',
+    desc: 'Mild & Refreshing',
+    url: './assets/beers/wheat.jpg',
+    width: '4000',
+    height: '6000',
+    active: false,
+  },
+]
+
 /**
  * Mobile navigation toggle functions
  */
@@ -124,8 +218,10 @@ function displayBeers(filteredBeerArr) {
           <div class="overlay-container">
             <img
             src="${beer.url}"
-            alt="${beer.brand} ${beer.type}"
             class="beer-img"
+            width="${beer.width}"
+            height="${beer.height}"
+            alt="${beer.brand} ${beer.type}"
             loading="lazy"
             />
             <div class="overlay">
@@ -144,8 +240,10 @@ function displayBeers(filteredBeerArr) {
           <div class="overlay-container">
             <img
             src="${beer.url}"
-            alt="${beer.brand} ${beer.type}"
             class="beer-img"
+            width="${beer.width}"
+            height="${beer.height}"
+            alt="${beer.brand} ${beer.type}"
             loading="lazy"
             />
             <div class="overlay">
